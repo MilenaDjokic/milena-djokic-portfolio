@@ -1,0 +1,26 @@
+#teaser {
+  width: 100vw;
+  height: 100vh;
+  background: url(/Materials/main-graph.svg);
+  background-repeat: no-repeat; 
+  background-size: contain;
+  background-position: center;
+  filter: blur(0px);
+  opacity: 100%;
+}
+
+/* Ensure ripples canvas fills the teaser element */
+#teaser canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+@media(max-width: 700px) {
+    #teaser {
+        background: url(/Materials/main-graph-mobile.svg);
+        background-repeat: no-repeat; 
+        background-size: contain;
+        background-position: center;
+    }  
+}

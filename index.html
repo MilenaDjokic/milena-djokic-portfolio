@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/jquery.ripples/dist/jquery.ripples-min.js"></script>
+  <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css">
+  <title>Milena Đokić</title>
+</head>
+<body class="index-page">
+  <header id="header">
+    <div class="header-wrap">
+        <a class="logo" href="/index.html">
+            <img class="header-img" src="/Materials/logo.svg" alt="">
+        </a>
+        <img class="header-img menu" src="/Materials/menu.svg" alt="">
+        <div class="nav">
+            <a class="nav-item" href="/work.html" data-splitting="chars">WORK</a>
+            <a class="nav-item" href="/index.html" data-splitting="chars">ABOUT</a>
+            <a class="nav-item" href="/index.html" data-splitting="chars">CONTACT</a>
+        </div>
+    </div>
+  </header>
+  <div id="teaser"></div> 
+ 
+  <script>
+
+    function initRipples() {
+  $('#teaser').ripples({
+    resolution: 500,
+    dropRadius: 50,
+    perturbance: 0.01,
+  });
+}
+
+// Init once
+initRipples();
+
+// Re-init on resize
+$(window).on('resize', function () {
+  // destroy the old canvas
+  $('#teaser').ripples('destroy');
+  // re-init with new size
+  initRipples();
+});
+  </script>
+
+<script src="/script.js"></script>
+</body>
+</html>
