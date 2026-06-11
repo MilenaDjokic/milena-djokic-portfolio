@@ -11,7 +11,7 @@
     height: 100vh;
     display: grid;
 }
-/* ------------DEVELOPER--------------- */
+/* ------------DEVELOPER--------------- */ 
 .developer-wrap {
     width: 100%;
     max-width: 1600px;
@@ -30,7 +30,7 @@
     width: 600px;
     text-align: left;
     margin-bottom: 60px;
-    font-size: 55px;
+    font-size: var(--font-size-body);
     color: var(--color-dark);
     text-shadow: 0 0 16px var(--color-light);
 }
@@ -80,7 +80,7 @@
     width: 600px;
     text-align: left;
     margin-top: 60px;
-    font-size: 55px;
+    font-size: var(--font-size-body);
     color: var(--color-light);
     
 }
@@ -138,4 +138,101 @@
         margin-bottom: 100px;
         margin-top: 0;
    }
+}
+
+/* ------------ABOUT ME--------------- */
+
+.aboutme-text-wrap {
+    width: var(--website-width);
+    margin: auto;
+    display: grid;
+    gap: 30px;
+    margin-bottom: 300px;
+}
+.aboutme-text {
+    font-size: var(--font-size-body);
+    color: var(--color-light);
+}
+
+.stack-wrap {
+    display: grid;
+    gap: 30px;
+    margin: auto;
+    margin-bottom: 300px;
+}
+.stack-title {
+    font-size: var(--font-size-h1);
+    color: var(--color-light);
+    text-align: center;
+}
+.stack-list {
+    width: var(--website-width);
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.stack {
+    font-size: var(--font-size-h3);
+    color: var(--color-light);
+    font-family: var(--font-body);
+    text-transform: var(--font-uppercase);
+    line-height: 1;
+}
+.dot {
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-akcent);
+    border-radius: 50%;
+    align-self: center;
+    margin-top: 10px;
+}
+
+/* ------------CONTACT--------------- */
+
+#contact {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    display: grid;
+}
+.contact-wrap {
+    width: var(--website-width);
+    margin: auto;
+    display: grid;
+    gap: 30px;
+    margin-bottom: 160px;
+}
+.contact-title {
+    font-size: 230px;
+    color: var(--color-light);
+    text-align: center;
+}
+.contact-list {
+    display: grid;
+    gap: 30px;
+    justify-items: center;
+}
+.contact-item {
+    font-size: 80px;
+    font-family: var(--font-title);
+    font-weight: 700;
+    color: var(--color-light);
+    text-decoration: none;
+}
+.contact-item:hover {
+    color: var(--color-akcent);
+    transition: color 0.3s ease;
+}
+.koi-red {
+    position: absolute;
+    top: -340px;
+    right: -300px;
+    z-index: 10;
+}
+.koi-white {
+    position: absolute;
+    bottom: -140px;
+    left: 100px;
+    z-index: 10;
 }

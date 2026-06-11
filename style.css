@@ -15,6 +15,10 @@
     --font-title: Jost;
     --font-body: Darker Grotesque;
     --font-uppercase: uppercase;
+    --font-size-h1: 230px;
+    --font-size-h2: 120px;
+    --font-size-h3: 80px; 
+    --font-size-body: 55px;   
 
     --website-width: 1600px;
     --max-width: 90%;

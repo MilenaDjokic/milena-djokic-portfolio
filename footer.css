@@ -2,8 +2,6 @@ footer {
     width: 100vw;
     height: 180px;
     display: grid;
-    /* position: absolute;
-    bottom: 0; */
     justify-items: center;
     align-items: center;
     background-color: var(--color-secondary);
@@ -19,7 +17,7 @@ footer {
 }
 .footer-text {
     font-family: var(--font-body);
-    font-size: 12px;
+    font-size: 16px;
     color: var(--color-dark);
     text-align: center;
     justify-self: end;
