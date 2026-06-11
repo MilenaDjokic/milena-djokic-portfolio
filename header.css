@@ -1,5 +1,5 @@
 #header {
-    width: 100vw;
+    width: 100%;
     display: flex;
     position: fixed;
     top: 0;
@@ -8,13 +8,14 @@
 }
 
 .header-wrap {
-    width: 1920px;
-    max-width: 96%;
+    width: min(var(--website-width), calc(100% - 2rem));
     margin: auto;
-    padding-top: 40px;
+    padding-top: clamp(20px, 3vw, 40px);
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) auto;
     justify-content: space-between;
+    align-items: start;
+    gap: 1rem;
 }
 
 .menu {
@@ -30,7 +31,7 @@
 }
 
 .header-img {
-    height: 40px;
+    height: clamp(30px, 3vw, 40px);
     transform:
     perspective(800px)
     rotateY(25deg)
@@ -49,6 +50,7 @@
     display: none;
     margin-top: 20px;
     width: fit-content;
+    max-width: min(80vw, 360px);
     height: fit-content;
     grid-area: 2 / 2;
     justify-self: end;
@@ -63,7 +65,7 @@
 }
 .nav-item {
     font-family: var(--font-title);
-    font-size: 40px;
+    font-size: clamp(2rem, 5vw, 40px);
     font-weight: 900;
     text-align: right;
     text-decoration: none;
@@ -128,6 +130,7 @@
     color: var(--color-akcent);
 }
 
+
 /* ------------------------ */
 
 /* Overlay used to blur the page when navigation is active
@@ -167,9 +170,18 @@ body.nav-active {
 
 @media(max-width: 700px) {
     .header-wrap {
-        padding-top: 20px;
+        width: calc(100% - 1.5rem);
     }
-    .header-image {
+
+    .header-img {
         height: 30px;
+    }
+
+    .nav {
+        margin-top: 12px;
+    }
+
+    .nav-item {
+        font-size: clamp(1.4rem, 9vw, 2.2rem);
     }
 }

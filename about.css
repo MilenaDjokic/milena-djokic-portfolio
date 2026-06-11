@@ -1,5 +1,5 @@
 #about {
-    width: 100vw;
+    width: 100%;
     height: 100%;
     display: grid;
 }
@@ -8,13 +8,32 @@
     width: 100%;
     max-width: var(--max-width);
     margin: auto;
-    height: 100vh;
     display: grid;
 }
+.v-height {
+    min-height: 100dvh;
+}
+.margin-bottom {
+    margin-bottom: 300px;
+}
+.title-wrap {
+    width: 100%;
+    align-self: end;
+}
+.about-title {
+    font-size: var(--font-size-h2);
+    text-align: center;
+    line-height: 1;
+}
+.about-subtitle {
+    font-size: var(--font-size-body-small);
+    text-align: center;
+    text-transform: var(--font-uppercase);
+}
+
 /* ------------DEVELOPER--------------- */ 
 .developer-wrap {
-    width: 100%;
-    max-width: 1600px;
+    width: min(var(--website-width), calc(100% - 2rem));
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
@@ -27,7 +46,7 @@
     justify-self: start;
     align-self: end;
     z-index: 1;
-    width: 600px;
+    width: min(600px, 100%);
     text-align: left;
     margin-bottom: 60px;
     font-size: var(--font-size-body);
@@ -35,7 +54,7 @@
     text-shadow: 0 0 16px var(--color-light);
 }
 .developer-portrait {
-    width: 1000px;
+    width: min(1000px, 100%);
     grid-area: 1 / 1;
     justify-self: center;
     align-self: end;
@@ -63,11 +82,9 @@
 }
 
 .designer-wrap {
-    width: 100%;
-    max-width: 1600px;
+    width: min(var(--website-width), calc(100% - 2rem));
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
     justify-self: center;
     align-self: start;
     margin: 0 auto;
@@ -77,7 +94,7 @@
     justify-self: end;
     align-self: start;
     z-index: 1;
-    width: 600px;
+    width: min(600px, 100%);
     text-align: left;
     margin-top: 60px;
     font-size: var(--font-size-body);
@@ -85,7 +102,7 @@
     
 }
 .designer-portrait {
-    width: 1000px;
+    width: min(1000px, 100%);
     grid-area: 1 / 1;
     justify-self: center;
     align-self: end;
@@ -99,52 +116,14 @@
     
 }
 
-@media(max-width: 1600px) {
-    .developer-text {
-        width: 500px;
-        font-size: 50px;
-    }
-}
-
-@media(max-width: 1000px) {
-    .container {
-        width: 100vw;
-        height: fit-content;
-        padding-top: 120px;
-    }
-    .developer-wrap {
-        width: 100%;
-        max-width: 100%;
-        padding: 0 20px;
-    }
-    .developer-text {
-        position: unset;
-        width: 100%;
-        max-width: 100%;
-        font-size: 40px;
-        justify-self: center;
-    }
-   .developer-portrait {
-        width: 100%;
-        max-width: 100%;
-        grid-area: 2 / 1;
-   }
-   .developer-graph {
-        position: unset;
-        width: 100%;
-        max-width: 100%;
-        grid-area: 2 / 1;
-        justify-self: center;
-        margin-bottom: 100px;
-        margin-top: 0;
-   }
-}
 
 /* ------------ABOUT ME--------------- */
 
 .aboutme-text-wrap {
-    width: var(--website-width);
+    width: min(var(--website-width), calc(100% - 2rem));
+    max-width: var(--max-width);
     margin: auto;
+    padding: 0;
     display: grid;
     gap: 30px;
     margin-bottom: 300px;
@@ -155,19 +134,23 @@
 }
 
 .stack-wrap {
+    width: min(var(--website-width), calc(100% - 2rem));
+    padding: 0;
     display: grid;
     gap: 30px;
     margin: auto;
     margin-bottom: 300px;
 }
 .stack-title {
+    width: 100%;
     font-size: var(--font-size-h1);
     color: var(--color-light);
     text-align: center;
 }
 .stack-list {
-    width: var(--website-width);
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
     align-items: center;
@@ -195,18 +178,22 @@
     height: fit-content;
     position: relative;
     display: grid;
+    z-index: 3;
+    overflow: visible;
 }
 .contact-wrap {
-    width: var(--website-width);
+    width: min(var(--website-width), calc(100% - 2rem));
     margin: auto;
     display: grid;
     gap: 30px;
     margin-bottom: 160px;
 }
 .contact-title {
-    font-size: 230px;
+    width: 100%;
+    font-size: clamp(4rem, 14vw, 230px);
     color: var(--color-light);
     text-align: center;
+    line-height: 0.95;
 }
 .contact-list {
     display: grid;
@@ -214,16 +201,37 @@
     justify-items: center;
 }
 .contact-item {
-    font-size: 80px;
+    font-size: clamp(1.8rem, 6vw, 80px);
     font-family: var(--font-title);
     font-weight: 700;
     color: var(--color-light);
     text-decoration: none;
+    text-align: center;
+    word-break: break-word;
 }
 .contact-item:hover {
     color: var(--color-akcent);
     transition: color 0.3s ease;
 }
+.contact-item .char {
+    display: inline-block;
+    transform: translateY(0);
+    will-change: transform;
+}
+
+.contact-item:hover .char {
+    animation: link-wave 0.8s ease-in-out infinite;
+    animation-delay: calc(var(--char-index) * 0.045s);
+}
+@keyframes link-wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-0.32em);
+    }
+}
+
 .koi-red {
     position: absolute;
     top: -340px;
@@ -234,5 +242,207 @@
     position: absolute;
     bottom: -140px;
     left: 100px;
-    z-index: 10;
+    z-index: 100;
+}
+
+#about + footer {
+    position: relative;
+    z-index: 1;
+}
+
+@media(max-width: 1600px) {
+    .developer-text {
+        width: 500px;
+        font-size: 50px;
+    }
+}
+
+@media(max-width: 1000px) {
+    .container {
+        width: 100%;
+        height: fit-content;
+    }
+    .title-wrap {
+        padding-top: 10rem;
+    }
+    .margin-bottom {
+        margin-bottom: 0px;
+    }
+    .developer-wrap{
+        padding-top: 120px;
+    }
+    .developer-text, .designer-text {
+        width: 100%;
+        max-width: 100%;
+        font-size: 30px;
+        justify-self: center;
+    }
+    .designer-text {
+        grid-area: 2 / 1;
+        margin-bottom: 100px;
+    }
+   .developer-portrait {
+        width: 100%;
+        max-width: 100%;
+        grid-area: 2 / 1;
+   }
+   .designer-portrait {
+        width: 100%;
+        max-width: 100%;
+        grid-area: 1 / 1;
+        align-self: start;
+   }
+   .developer-graph {
+        width: 100%;
+        max-width: 100%;
+        grid-area: 2 / 1;
+        justify-self: center;
+        margin-bottom: 100px;
+        margin-top: 0;
+   }
+   .designer-graph {
+        width: 100%;
+        max-width: 100%;
+        grid-area: 1 / 1;
+        justify-self: center;
+        margin-top: 100px;
+        margin-bottom: 0;
+   }
+   .aboutme-text-wrap {
+        gap: 10px;
+        margin-bottom: 100px;
+   }
+   .aboutme-text{
+        font-size: 30px;
+   }
+   .stack-wrap {
+        gap: 10px;
+        margin-bottom: 100px;
+   }
+    .stack-title {
+        font-size: 80px;
+    }
+    .stack-list {
+        gap: 6px;
+    }
+    .stack {
+        font-size: 30px;
+    }
+    .dot {
+        width: 10px;
+        height: 10px;
+        margin-top: 5px;
+    }
+    .contact-wrap {
+        gap: 30px;
+        margin-bottom: 100px;
+    }
+    .contact-title {
+        font-size: 80px;
+    }
+    .contact-list {
+        gap: 6px;
+    }
+    .contact-item {
+        font-size: 30px;
+    }
+    .koi-red {
+        width: 350px;
+        top: -30%;
+        right: -1%;
+    }
+    .koi-white {
+        width: 250px;
+        bottom: -52px;
+        left: 40px;
+    }
+}
+
+@media(max-width: 700px) {
+    .title-wrap {
+        padding-top: 6rem;
+    }
+    .about-title {
+        font-size: 100px;
+    }
+    .about-subtitle {
+        font-size: 30px;
+    }
+    .developer-wrap,
+    .designer-wrap,
+    .aboutme-text-wrap,
+    .stack-wrap,
+    .contact-wrap {
+        width: calc(100% - 1.5rem);
+    }
+
+    .developer-wrap {
+        padding-top: 88px;
+    }
+
+    .developer-text,
+    .designer-text,
+    .aboutme-text {
+        font-size: clamp(1.4rem, 7vw, 2rem);
+    }
+
+    .stack-list {
+        gap: 8px 6px;
+    }
+
+    .contact-list {
+        gap: 10px;
+    }
+}
+
+@media(max-width: 600px) {
+    .title-wrap {
+        padding-top: 6rem;
+    }
+    .about-title {
+        font-size: 60px;
+    }
+    .about-subtitle {
+        font-size: 24px;
+    }
+    .developer-wrap {
+        padding-top: 60px;
+    }
+    .developer-text {
+        margin-bottom: 30px;
+    }
+    .designer-text {
+        margin-top: 30px;
+        margin-bottom: 60px;
+    }
+    .aboutme-text-wrap {
+        margin-bottom: 60px;
+    }
+    .stack-title {
+        font-size: 60px;
+    }
+    .stack {
+        font-size: 18px;
+    }
+    .dot {
+        width: 6px;
+        height: 6px;
+        margin-top: 3px;
+    }
+    .contact-title {
+        font-size: 60px;
+    }
+    .contact-item {
+        font-size: 24px;
+    }
+     .koi-red {
+        width: 200px;
+        top: 8%;
+        right: -10%;
+    }
+    .koi-white {
+        width: 150px;
+        bottom: -9%;
+        left: 0%;
+    }
 }

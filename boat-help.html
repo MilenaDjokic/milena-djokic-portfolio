@@ -18,31 +18,89 @@
 <body>
 
     <header id="header">
-        <div class="header-wrap">
-            <a class="logo" href="/index.html">
-                <img class="header-img" src="/Materials/logo.svg" alt="">
-            </a>
-            <img class="header-img menu" src="/Materials/menu.svg" alt="">
-            <div class="nav">
-                <a class="nav-item" href="/work.html" data-splitting="chars">WORK</a>
-                <a class="nav-item" href="/about.html" data-splitting="chars">ABOUT</a>
-                <a class="nav-item" href="/contact.html" data-splitting="chars">CONTACT</a>
-            </div>
+    <div class="header-wrap">
+        <a class="logo" href="/">
+            <img class="header-img" src="/Materials/logo.svg" alt="">
+        </a>
+        <img class="header-img menu" src="/Materials/menu.svg" alt="">
+        <div class="nav">
+            <a class="nav-item" href="/work.html" data-splitting="chars">WORK</a>
+            <a class="nav-item" href="/about.html" data-splitting="chars">ABOUT</a>
+            <a class="nav-item" href="/about.html#contact" data-splitting="chars">CONTACT</a>
         </div>
-    </header>
+    </div>
+  </header>
 
     <div id="project">
+        <img class="floating-btn" src="/Materials/to-top.svg" alt="">
        <div class="project-wrap">
-           <h1 class="project-title">Boat Help</h1>
-           <div class="project-info">
-                <div class="project-type">
-                    <p class="project-type-text">UX/UI Design</p>
-                    <p class="project-type-text">UX/UI Design</p>
-                    <p class="project-type-text">UX/UI Design</p>
+           <div class="project-info-wrap">
+                <div class="project-link-wrap">
+                    <a class="prj-link" href="/sb22.html" data-splitting="chars">SB22</a>
+                    <div class="dot dot-medium"></div>
+                    <a class="prj-link" href="/dbeogradjanka.html" data-splitting="chars">D BEOGRAĐANKA</a>
+                    <div class="dot dot-medium"></div>
+                    <a class="prj-link active" href="/boat-help.html" data-splitting="chars">BOAT HELP</a>
+                    <div class="dot dot-medium"></div>
+                    <a class="prj-link" href="/dev-ex-macchina.html" data-splitting="chars">DEV EX MACCHINA</a>
+                    <div class="dot dot-medium"></div>
+                    <a class="prj-link" href="/optimo.html" data-splitting="chars">OPTIMO</a>
                 </div>
-                <p class="project-text">BoatHelp is a two-sided marketplace designed to simplify how boat owners find and hire reliable professionals for maintenance and repairs. The core UX challenge was to create a clear, frictionless flow for two distinct user roles while keeping the process intuitive for users with varying levels of technical experience. The concept design is boat owner user oriented.</p>
+                <h1 class="project-title project-split" data-splitting="chars">Boat Help</h1>
+                <div class="project-info">
+                    <div class="project-type-wrap">
+                        <div class="project-type">
+                            <p class="project-type-text">UX/UI</p>
+                            <p class="project-type-text">System design</p>
+                            <p class="project-type-text">Prototyping</p>
+                        </div>
+                        <p class="project-date">2026</p>
+                        <a href="https://www.figma.com/proto/zdGuNfJy6c8L4ZDR7hB1yF/BoatHelper?node-id=1-2&p=f&t=jjZC912aPg4xkCgi-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2&show-proto-sidebar=1" class="project-link" data-splitting="chars">Go to prototype</a>
+                    </div>
+                    <p class="project-text">BoatHelp is a two-sided marketplace designed to simplify how boat owners find and hire reliable professionals for maintenance and repairs. The core UX challenge was to create a clear, frictionless flow for two distinct user roles while keeping the process intuitive for users with varying levels of technical experience. The concept design is boat owner user oriented.</p>
+                </div>
            </div>
 
+           <div class="mobile-3screen">
+                <img class="mobile-frame mobile-small" src="/Materials/prBoatHelp/boatowner-profile.png" alt="">
+                <img class="mobile-frame mobile-big" src="/Materials/prBoatHelp/boathelp-home.jpg" alt="">
+                <img class="mobile-frame mobile-small" src="/Materials/prBoatHelp/craftsman-profile.png" alt="">
+           </div>
+
+           <div class="text-image-horizontal">
+                <p class="project-text">The platform is structured around a task-based workflow. Boat owners post a job without setting a budget, reducing decision fatigue and encouraging more accurate, market-driven offers. Craftsmen browse available tasks and submit bids, clearly communicating pricing and availability. The interface prioritizes clarity, trust, and easy comparison, allowing boat owners to review offers efficiently and select the most suitable professional.</p>
+                <img class="mobile-frame mobile-default" src="/Materials/prBoatHelp/boat-profile.jpg" alt="">
+           </div>
+
+           <div class="text-image-vertical">
+                <p class="project-text centered-text">By embedding task status changes directly into the conversation, the design reinforces transparency and trust between users. Both parties always know the current state of the task and required next steps, from agreement to completion and review.</p>
+                <div class="screens8-wrap">
+                    <img class="mobile-frame mobile-small position" src="/Materials/prBoatHelp/8-screen-1.png" alt="">
+                    <img class="mobile-frame mobile-small" src="/Materials/prBoatHelp/8-screen-2.png" alt="">
+                    <img class="mobile-frame mobile-small position" src="/Materials/prBoatHelp/8-screen-3.png" alt="">
+                    <img class="mobile-frame mobile-small" src="/Materials/prBoatHelp/8-screen-4.png" alt="">
+                    <img class="mobile-frame mobile-small position" src="/Materials/prBoatHelp/8-screen-5.png" alt="">
+                    <img class="mobile-frame mobile-small" src="/Materials/prBoatHelp/8-screen-6.png" alt="">
+                    <img class="mobile-frame mobile-small position" src="/Materials/prBoatHelp/8-screen-7.png" alt="">
+                    <img class="mobile-frame mobile-small" src="/Materials/prBoatHelp/8-screen-8.png" alt="">
+                </div>
+           </div>
+
+           <div class="text-image-vertical">
+                <p class="project-text centered-text">The UI design supports this flow through straightforward navigation, clear role-based screens, and an emphasis on readability and hierarchy. Key actions—posting a task, submitting a bid, reviewing offers, and confirming completion—are intentionally surfaced to minimize friction and guide users through the process from start to payment.</p>
+                <img class="image" src="/Materials/prBoatHelp/screen mosaic.png" alt="">
+           </div>
+
+           <div class="text-image-vertical">
+                <p class="project-text centered-text">A modular design system was created to ensure consistency and scalability across the product. Defined typography, color palette, iconography, and reusable components establish a clear visual hierarchy and support efficient implementation across both user roles.</p>
+                <img class="no-frame-screen" src="/Materials/prBoatHelp/palette.png" alt="">
+                <img class="no-frame-screen" src="/Materials/prBoatHelp/components.png" alt="">
+           </div>
+
+            <div class="text-image-vertical">
+                <p class="project-text centered-text">The design process was highly iterative, with multiple rounds of user testing and feedback shaping the final product. The resulting platform effectively addresses the unique needs of boat owners and craftsmen, providing a seamless experience that fosters trust and encourages repeat use.</p>
+                <img class="no-frame-screen" src="/Materials/prBoatHelp/prototyping.png" alt="">
+           </div>
        </div>
     </div>
 
@@ -53,9 +111,7 @@
             <p class="footer-text">Website by Milena Đokić</p>
         </div>
     </footer>
-   
-</body>
-</html>
+
     <script src="/script.js"></script>
 </body>
 </html>

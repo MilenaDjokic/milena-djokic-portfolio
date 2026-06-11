@@ -2,6 +2,7 @@
 @import url(/header.css);
 @import url(/work.css);
 @import url(/about.css);
+@import url(/project.css);
 @import url(/footer.css);
 
 :root {
@@ -16,27 +17,43 @@
     --font-body: Darker Grotesque;
     --font-uppercase: uppercase;
     --font-size-h1: 230px;
-    --font-size-h2: 120px;
-    --font-size-h3: 80px; 
+    --font-size-h2: 128px;
+    --font-size-h3: 60px;
     --font-size-body: 55px;   
+    --font-size-body-small: 40px;
 
     --website-width: 1600px;
     --max-width: 90%;
 }
 
-* {
+*,
+*::before,
+*::after {
     margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
 }
 * h1, h2, h3 {
  font-family: var(--font-title);
+ font-weight: 900;
  text-transform: var(--font-uppercase);
 }
 
 * p {
     font-family: var(--font-body);
 }
+* a {
+    text-decoration: none;
+    color: inherit;
+}
 
 body {
+    width: 100%;
+    min-height: 100vh;
     position: relative;
     overflow-x: hidden;
     isolation: auto !important;
@@ -48,24 +65,22 @@ body {
     animation: grain-move 1s steps(10) infinite;
 }
 
+img,
+svg,
+picture,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
 
 /* Prevent scrolling on the index page and ensure it fits the viewport */
 .index-page {
-    height: 100vh;
+    min-height: 100dvh;
+    height: 100dvh;
     overflow: hidden;
 }
 
-h1 {
-    font-size: 180px;
-}
-
-h3 {
-    font-size: 60px;
-}
-
-p {
-    font-size: 40px;
-}
 
 /* Grain animation */
 @keyframes grain-move {
@@ -83,6 +98,31 @@ canvas {
     max-height: 100%;
 }
 
+/* Link animations on hover */
+
+.link:hover {
+    color: var(--color-akcent);
+}
+
+.link .char {
+    display: inline-block;
+    transform: translateY(0);
+    will-change: transform;
+}
+
+.link:hover .char {
+    animation: link-wave 0.8s ease-in-out infinite;
+    animation-delay: calc(var(--char-index) * 0.045s);
+}
+
+@keyframes link-wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-0.32em);
+    }
+}
 
 
 
@@ -90,4 +130,3 @@ canvas {
 
 
 
-  

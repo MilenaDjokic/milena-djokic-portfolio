@@ -3,6 +3,51 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof Splitting === 'function') {
     Splitting();
   }
+
+  const tabButtons = Array.from(document.querySelectorAll('.tab-button[data-tab]'));
+  const tabPanels = Array.from(document.querySelectorAll('[data-content]'));
+
+  if (tabButtons.length && tabPanels.length) {
+    const setActiveTab = (tabName) => {
+      tabButtons.forEach((button) => {
+        button.classList.toggle('active', button.dataset.tab === tabName);
+      });
+
+      tabPanels.forEach((panel) => {
+        const isActive = panel.dataset.content === tabName;
+        panel.classList.toggle('active', isActive);
+        panel.hidden = !isActive;
+      });
+    };
+
+    const activeButton =
+      tabButtons.find((button) => button.classList.contains('active')) || tabButtons[0];
+
+    setActiveTab(activeButton.dataset.tab);
+
+    tabButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        setActiveTab(button.dataset.tab);
+      });
+    });
+  }
+
+  const floatingBtn = document.querySelector('.floating-btn');
+
+  const updateFloatingBtn = () => {
+    if (!floatingBtn) return;
+    const floatingThreshold = window.innerHeight * 2;
+    const isVisible = window.scrollY > floatingThreshold;
+    floatingBtn.classList.toggle('visible', isVisible);
+  };
+
+  if (floatingBtn) {
+    window.addEventListener('scroll', updateFloatingBtn, { passive: true });
+    floatingBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    updateFloatingBtn();
+  }
 });
 
 // Show navigation
@@ -54,19 +99,18 @@ document.querySelectorAll('.nav-item').forEach(item => {
 });
 
 
-// Show work on page load
+// Show page-specific sections on load
 window.addEventListener('load', () => {
   const workSegment = document.querySelector('#work');
   if (workSegment) {
     workSegment.classList.add('show');
-  } 
+  }
+
+  const projectSegment = document.querySelector('#project');
+  if (projectSegment) {
+    projectSegment.classList.add('show');
+  }
 });
-
-
-Splitting();
-
-
-
 
 
 

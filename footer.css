@@ -1,15 +1,16 @@
 footer {
-    width: 100vw;
-    height: 180px;
+    width: 100%;
+    min-height: 180px;
     display: grid;
     justify-items: center;
     align-items: center;
     background-color: var(--color-secondary);
+    z-index: -1;
+    padding: 24px 0;
 }
 
 .footer-wrap {
-    width: 100%;
-    max-width: var(--max-width);
+    width: min(var(--website-width), calc(100% - 2rem));
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     gap: 20px;
@@ -32,9 +33,22 @@ footer {
 
 @media(max-width: 700px) {
     footer {
-        height: 120px;
+        min-height: 120px;
+        padding: 20px 0;
     }
+
+    .footer-wrap {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 10px;
+    }
+
+    .footer-text,
+    .footer-text:first-child {
+        justify-self: center;
+    }
+
     .footer-image {
         height: 60px;
     }
-}  
+}
